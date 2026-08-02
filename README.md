@@ -21,14 +21,16 @@ Automate stopping and starting of EC2 instances based on tags, using an AWS Lamb
 - Launched two `t3.micro` (free tier eligible) instances in `us-west-1`
   - `vikramjeet-ec1` → tagged `Action = Auto-Stop`, kept **running**
   - `vikramjeet-ec2` → tagged `Action = Auto-Start`, manually **stopped**
-- Screenshot: `screenshots/Launch-an-instance-EC2-us-west-1-08-02-2026_07_10_PM.png`
+- Screenshot:
+  ![EC2 Launch instance](screenshots/Launch-an-instance-EC2-us-west-1-08-02-2026_07_10_PM.png)
 
 ### 2. IAM Role for Lambda
 - Created an IAM role via IAM → Roles → Create role
   - Trusted entity: AWS service → Lambda
   - Permissions policy: `AmazonEC2FullAccess` (AWS managed)
   - Role name: `lambda-ec2-tag-manager-role`
-- Screenshot: `screenshots/lambda-ec2-tag-manager-role-IAM-Global-08-02-2026_07_13_PM.png`
+- Screenshot:
+  ![Lambda IAM role permissions](screenshots/lambda-ec2-tag-manager-role-IAM-Global-08-02-2026_07_13_PM.png)
 
 > Note: `AmazonEC2FullAccess` is used here for simplicity as required by the assignment.
 > In a production setting this would be replaced with a least-privilege custom policy scoped to `ec2:DescribeInstances`, `ec2:StopInstances`, and `ec2:StartInstances` only.
@@ -39,7 +41,8 @@ Automate stopping and starting of EC2 instances based on tags, using an AWS Lamb
   - Execution role: existing role → `lambda-ec2-tag-manager-role`
 - Replaced the default handler code with `lambda_function.py` (included in this repo)
 - Deployed the function
-- Screenshot: `screenshots/Create-function-Functions-Lambda-08-02-2026_07_09_PM.png`
+- Screenshot:
+  ![Lambda function creation](screenshots/Create-function-Functions-Lambda-08-02-2026_07_09_PM.png)
 
 ### 4. Manual Invocation / Testing
 - Created a test event (`manualTest`) with default JSON payload (event data is not used by this function)
@@ -56,13 +59,15 @@ Automate stopping and starting of EC2 instances based on tags, using an AWS Lamb
   Stopped instances: ['i-06678126d09b1d022']
   Started instances: ['i-0da61b135f3ff7079']
   ```
-- Screenshot: `screenshots/ec2-auto-stop-start-Functions-Lambda-Test-Run-08-02-2026_07_09_PM.png`
+- Screenshot:
+  ![Lambda test execution result](screenshots/ec2-auto-stop-start-Functions-Lambda-Test-Run-08-02-2026_07_09_PM.png)
 
 ### 5. Verification
 - Confirmed in the EC2 console that:
   - `vikramjeet-ec1` (Auto-Stop) transitioned to **stopped**
   - `vikramjeet-ec2` (Auto-Start) transitioned to **running**
-- Screenshot: `screenshots/instances_state_after_test_run.png`
+- Screenshot:
+  ![EC2 instances state after test run](screenshots/instances_state_after_test_run.png)
 
 ## Code
 See `lambda_function.py` for the full Boto3 script.
