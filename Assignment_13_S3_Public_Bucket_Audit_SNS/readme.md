@@ -57,31 +57,38 @@
 - See `lambda_function.py` in this folder for the exact Boto3 implementation used during the assignment.
 
 **Screenshots (detailed)**
-The screenshots captured during the assignment are stored in the screenshots folder and referenced below for each key step.
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-alert-Topics-Simple-Notification-Service-us-east-1-08-02-2026_10_27_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-alert-Topics-Simple-Notification-Service-us-east-1-08-02-2026_10_27_PM.png)
-  - **SNS topic creation:** Screenshot of the SNS topic named `s3-public-bucket-alert` in the AWS console.
+**Step 1: SNS Topic Creation**
+![SNS topic creation](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-alert-Topics-Simple-Notification-Service-us-east-1-08-02-2026_10_27_PM.png)
+*SNS topic named `s3-public-bucket-alert` in the AWS console.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Create-subscription-Subscriptions-Simple-Notification-Service-us-east-1-08-02-2026_10_30_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Create-subscription-Subscriptions-Simple-Notification-Service-us-east-1-08-02-2026_10_30_PM.png)
-  - **Subscription setup:** Screenshot showing the email subscription being created for the SNS topic.
+**Step 2: SNS Subscription Setup**
+![Subscription setup](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Create-subscription-Subscriptions-Simple-Notification-Service-us-east-1-08-02-2026_10_30_PM.png)
+*Email subscription being created for the SNS topic.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Subscription-confirm-08-02-2026_10_22_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Subscription-confirm-08-02-2026_10_22_PM.png)
-  - **Subscription confirmation:** Screenshot confirming that the subscription was successfully created.
+**Step 3: Subscription Confirmation**
+![Subscription confirmation](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Subscription-confirm-08-02-2026_10_22_PM.png)
+*Confirmation that the subscription was successfully created.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Roles-IAM-Global-08-02-2026_10_27_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Roles-IAM-Global-08-02-2026_10_27_PM.png)
-  - **IAM role creation:** Screenshot of the IAM role screen used to create the Lambda execution role.
+**Step 4: IAM Role Creation**
+![IAM role creation](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/Roles-IAM-Global-08-02-2026_10_27_PM.png)
+*IAM role screen used to create the Lambda execution role.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-role-hpzzpclq-IAM-Global-Policy-Attached-08-02-2026_10_26_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-role-hpzzpclq-IAM-Global-Policy-Attached-08-02-2026_10_26_PM.png)
-  - **IAM permissions:** Screenshot showing the attached policies for S3 read access, SNS publish access, and Lambda logging.
+**Step 5: IAM Permissions**
+![IAM permissions](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-role-hpzzpclq-IAM-Global-Policy-Attached-08-02-2026_10_26_PM.png)
+*Attached policies for S3 read access, SNS publish access, and Lambda logging.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-08-02-2026_10_23_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-08-02-2026_10_23_PM.png)
-  - **Lambda function code:** Screenshot of the Lambda function code and configuration in the AWS console.
+**Step 6: Lambda Function Code**
+![Lambda function code](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-08-02-2026_10_23_PM.png)
+*Lambda function code and configuration in the AWS console.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-Test_creation-08-02-2026_10_23_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-Test_creation-08-02-2026_10_23_PM.png)
-  - **Lambda test execution:** Screenshot of the test run and function response after execution.
+**Step 7: Lambda Test Execution**
+![Lambda test execution](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/s3-public-bucket-audit-Functions-Lambda-Test_creation-08-02-2026_10_23_PM.png)
+*Test run and function response after execution.*
 
-- [Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/AWS-Alert-Public-S3-Bucket-s-Detected-vikramgill814-gmail-com-Gmail-08-02-2026_10_21_PM.png](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/AWS-Alert-Public-S3-Bucket-s-Detected-vikramgill814-gmail-com-Gmail-08-02-2026_10_21_PM.png)
-  - **Notification email:** Screenshot of the SNS email received for public bucket detection.
+**Step 8: SNS Notification Email**
+![Notification email](Assignment_13_S3_Public_Bucket_Audit_SNS/screenshots/AWS-Alert-Public-S3-Bucket-s-Detected-vikramgill814-gmail-com-Gmail-08-02-2026_10_21_PM.png)
+*SNS email received for public bucket detection.*
 
 **Troubleshooting & notes**
 - If you see `AccessDenied` for `s3:ListAllMyBuckets`, ensure `AmazonS3ReadOnlyAccess` is attached to the execution role.
