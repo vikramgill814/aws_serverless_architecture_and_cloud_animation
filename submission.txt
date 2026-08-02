@@ -1,0 +1,3 @@
+Assignment repository: https://github.com/vikramgill814/aws_serverless_architecture_and_cloud_animation.git
+
+Project details and screenshots are available in README.md
